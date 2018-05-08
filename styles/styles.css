@@ -1,0 +1,73 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1176px;
+    margin: 0 auto;
+}
+
+
+
+
+.pageHeader {
+    height: 100px;
+    /*background-color: rgba(30, 30, 30, 0.3);*/
+
+}
+.headerNavigation {
+    display: flex;
+    height: 100%;
+
+}
+.headerNavigationBrand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+
+}.headerNavigationBrandLogo {
+    display: flex;
+    align-items: center;
+
+}
+.headerNavigationBrandLogoIcon {
+    width: 25%;
+    height: 25%;
+}
+.headerNavigationList {
+    align-items: center;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+flex-direction: row;
+}
+.headerNavigationList li {
+flex-direction: row;
+    margin: 20px;
+    text-decoration: none;
+}
+
+
+
+
+.mainBanner {
+    display: flex;
+    align-items: center;
+    background-image: url(../graphics/BeautyComplex1.jpg);
+    background-size: 100vw 100vh;
+    background-position-y: -150px;
+    height: 90vh;
+    background-repeat: no-repeat;
+
+}
+.mainBannerLogo {
+    display: flex;
+    justify-content: center;
+
+}
+.mainBannerLogoImage {
+    height: 80%;
+    width: 80%
+
+}
