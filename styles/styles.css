@@ -12,7 +12,7 @@
 
 .page-Header {
     height: 70px;
-    /*background-color: rgba(30, 30, 30, 0.3);*/
+    background-color: rgba(30, 30, 30, 0.3);
 
 }
 .header-Navigation {
@@ -55,7 +55,7 @@ flex-direction: row;
     display: flex;
     align-items: center;
     background-image: url(../graphics/BeautyComplex1.jpg);
-    background-size: 100vw 100vh;
+    background-size: cover;
     background-position-y: -150px;
     height: 90vh;
     background-repeat: no-repeat;
@@ -73,7 +73,12 @@ flex-direction: row;
 }
 
 
-
+.main-Info {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
 
 .main-info-flex {
     display: flex;
@@ -89,9 +94,56 @@ flex-direction: row;
 .main-info-col-one {
 
 }
+.main-info-col-one-img {
+    background-image: url(../graphics/BeautyComplex22.jpg);
+    height: 300px;
+    background-size: cover;
+
+}
 .main-info-col-two {
 
 }
+.main-info-col-two-img {
+    background-image: url(../graphics/BeautyComplex27.jpg);
+    height: 300px;
+    background-size: cover;
+
+}
 .main-info-col-three {
+
+}
+.main-info-col-three-img {
+    background-image: url(../graphics/BeautyComplex30.jpg);
+    height: 300px;
+    background-size: cover;
+
+}
+
+.add-info{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    
+}
+.add-info-flex{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.add-info-col {
+    width: 49%;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    background: white;
+    padding: 20px;
+
+}
+.add-info-img{
+
+    background-image: url(../graphics/BeautyComplex11.jpg);
+    height: 700px;
+    background-size: cover;
+    
+}
+.add-info-txt{
     
 }
