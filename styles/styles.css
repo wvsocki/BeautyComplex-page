@@ -10,39 +10,39 @@
 
 
 
-.pageHeader {
-    height: 100px;
+.page-Header {
+    height: 70px;
     /*background-color: rgba(30, 30, 30, 0.3);*/
 
 }
-.headerNavigation {
+.header-Navigation {
     display: flex;
     height: 100%;
 
 }
-.headerNavigationBrand {
+.header-Navigation-Brand {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     height: 100%;
 
-}.headerNavigationBrandLogo {
+}.header-Navigation-Brand-Logo {
     display: flex;
     align-items: center;
 
 }
-.headerNavigationBrandLogoIcon {
+.header-Navigation-Brand-Logo-Icon {
     width: 25%;
     height: 25%;
 }
-.headerNavigationList {
+.header-Navigation-List {
     align-items: center;
     height: 100%;
     display: flex;
     justify-content: flex-end;
 flex-direction: row;
 }
-.headerNavigationList li {
+.header-Navigation-List li {
 flex-direction: row;
     margin: 20px;
     text-decoration: none;
@@ -51,7 +51,7 @@ flex-direction: row;
 
 
 
-.mainBanner {
+.main-Banner {
     display: flex;
     align-items: center;
     background-image: url(../graphics/BeautyComplex1.jpg);
@@ -61,13 +61,37 @@ flex-direction: row;
     background-repeat: no-repeat;
 
 }
-.mainBannerLogo {
+.main-Banner-Logo {
     display: flex;
     justify-content: center;
 
 }
-.mainBannerLogoImage {
+.main-Banner-Logo-Image {
     height: 80%;
     width: 80%
 
+}
+
+
+
+
+.main-info-flex {
+    display: flex;
+    justify-content: space-around;
+}
+.main-info-col {
+    width: 32%;
+    border: 1px solid #777777;
+    border-radius: 8px;
+    background: white;
+    padding: 20px;
+}
+.main-info-col-one {
+
+}
+.main-info-col-two {
+
+}
+.main-info-col-three {
+    
 }
