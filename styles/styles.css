@@ -13,6 +13,8 @@
 .page-Header {
     height: 70px;
     background-color: rgba(30, 30, 30, 0.3);
+    position: fixed;
+    width: 100vw;
 
 }
 .header-Navigation {
@@ -47,6 +49,11 @@ flex-direction: row;
     margin: 20px;
     text-decoration: none;
 }
+.header-Navigation-List a {
+    font-family: sans-serif;
+    color: white;
+    text-decoration: none;
+}
 
 
 
@@ -57,7 +64,7 @@ flex-direction: row;
     background-image: url(../graphics/BeautyComplex1.jpg);
     background-size: cover;
     background-position-y: -150px;
-    height: 90vh;
+    height: 95vh;
     background-repeat: no-repeat;
 
 }
