@@ -55,6 +55,13 @@ flex-direction: row;
     text-decoration: none;
 }
 
+.facebook-icon {
+    background-image: url(../graphics/fbicon.ico);
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+}
+
 
 
 
