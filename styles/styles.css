@@ -12,7 +12,6 @@
 
 .page-header {
     height: 70px;
-    background-color: rgba(30, 30, 30, 0.3);
     position: fixed;
     width: 100vw;
     transition: all 0.4s
@@ -20,11 +19,11 @@
 }
 .page-header-shrink {
     height: 40px;
+    background-color: rgba(256, 256, 256, 0.5);
 }
 .header-Navigation {
     display: flex;
     height: 100%;
-
 }
 .header-Navigation-Brand {
     display: flex;
@@ -35,28 +34,33 @@
 }.header-Navigation-Brand-Logo {
     display: flex;
     align-items: center;
+    height: 100%;
 
 }
 .header-Navigation-Brand-Logo-Icon {
-    width: 25%;
-    height: 25%;
+    /*height: 75%;*/
+    /*width: auto;*/
+    height: auto;
+    width: auto;
+    max-height: 75%;
 }
-.header-Navigation-List {
+.header-navigation-List {
+    margin-left: auto;
     align-items: center;
     height: 100%;
     display: flex;
     justify-content: flex-end;
 flex-direction: row;
 }
-.header-Navigation-List li {
+.header-navigation-List li {
 flex-direction: row;
     margin: 20px;
     text-decoration: none;
 }
-.header-Navigation-List a {
+.header-navigation-List a {
     font-family: sans-serif;
-    color: white;
     text-decoration: none;
+    color: #606062;
 }
 
 .facebook-icon {
@@ -69,6 +73,7 @@ flex-direction: row;
 
 
 
+
 .main-Banner {
     display: flex;
     align-items: center;
@@ -77,6 +82,8 @@ flex-direction: row;
     background-position-y: -150px;
     height: 95vh;
     background-repeat: no-repeat;
+    box-shadow:inset 0 0 0 2000px rgba(256, 256, 256, 0.5);
+    background-attachment: fixed;
 
 }
 .main-Banner-Logo {
@@ -96,6 +103,7 @@ flex-direction: row;
     padding-bottom: 100px;
     background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
     radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    background-attachment:fixed
 }
 
 .main-info-flex {
@@ -140,12 +148,12 @@ flex-direction: row;
 .add-info{
     padding-top: 100px;
     padding-bottom: 100px;
-    
+
 }
 .add-info-flex{
     display: flex;
     justify-content: space-around;
-    
+
 }
 .add-info-col {
     width: 49%;
@@ -160,8 +168,8 @@ flex-direction: row;
     background-image: url(../graphics/BeautyComplex11.jpg);
     height: 700px;
     background-size: cover;
-    
+
 }
 .add-info-txt{
-    
+
 }
