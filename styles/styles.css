@@ -10,12 +10,16 @@
 
 
 
-.page-Header {
+.page-header {
     height: 70px;
     background-color: rgba(30, 30, 30, 0.3);
     position: fixed;
     width: 100vw;
+    transition: all 0.4s
 
+}
+.page-header-shrink {
+    height: 40px;
 }
 .header-Navigation {
     display: flex;
