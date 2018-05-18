@@ -14,12 +14,12 @@
     height: 70px;
     position: fixed;
     width: 100vw;
-    transition: all 0.4s
+    transition: all 0.6s
 
 }
 .page-header-shrink {
     height: 40px;
-    background-color: rgba(256, 256, 256, 0.5);
+    background-color: rgba(256, 256, 256, 0.9);
 }
 .header-Navigation {
     display: flex;
@@ -34,15 +34,16 @@
 }.header-Navigation-Brand-Logo {
     display: flex;
     align-items: center;
-    height: 100%;
+    height: 75%;
 
 }
 .header-Navigation-Brand-Logo-Icon {
-    /*height: 75%;*/
-    /*width: auto;*/
-    height: auto;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
     width: auto;
-    max-height: 75%;
+    height: auto;
+
 }
 .header-navigation-List {
     margin-left: auto;
@@ -69,6 +70,9 @@ flex-direction: row;
     width: 50px;
     background-size: contain;
 }
+.facebook-icon-shrink {
+    background-image: url(../graphics/BeautyComplex1.jpg);
+}
 
 
 
@@ -82,10 +86,11 @@ flex-direction: row;
     background-position-y: -150px;
     height: 95vh;
     background-repeat: no-repeat;
-    box-shadow:inset 0 0 0 2000px rgba(256, 256, 256, 0.5);
+    box-shadow:inset 0 0 0 2000px rgba(256, 256, 256, 0.6);
     background-attachment: fixed;
 
 }
+
 .main-Banner-Logo {
     display: flex;
     justify-content: center;
