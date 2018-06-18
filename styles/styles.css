@@ -26,6 +26,9 @@
 .header-Navigation {
     display: flex;
     height: 100%;
+    position: relative;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .header-Navigation-Brand {
     display: flex;
@@ -60,44 +63,73 @@
 
 #menu-toggle {display: none;}
 
-.label-toggle {display: none;}
+.label-toggle {display: none;
+    }
 
 @media (max-width: 768px){
     .header-navigation-List {
         flex-direction: column;
-        visibility: hidden;
+        /*visibility: hidden;*/
+        display: none;
     }
     #menu-toggle {
-        display: flex;
-        justify-content: flex-end;
+        /*display: flex;*/
+        /*justify-content: flex-end;*/
     }
 
-    .label-toggle {display: block;}
-    #menu-toggle:checked ~ .header-navigation-List{
-        visibility: visible;
+    .label-toggle {
+        background: linear-gradient(to bottom, #606062 0%, #606062 20%, transparent 20%, transparent 40%, #606062 40%, #606062 60%, transparent 60%, transparent 80%, #606062 80%, #606062 100%);
+        cursor: pointer;
+        display: flex;
+        /*height: 100%;*/
+        /*padding-bottom: 100%;*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*width: 0;*/
+        /*padding-left: 50%;*/
+
+
     }
+    #menu-toggle:checked ~ .page-header{
+        /*background-color: rgba(256, 256, 256, 0.9);*/
+        background-color: black;
+    }
+
+    #menu-toggle:checked ~ .header-navigation-List{
+        /*visibility: visible;*/
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        /*margin-top: 40px;*/
+        background-color: rgba(256, 256, 256, 0.9);
+
+    }
+    #menu-toggle:checked ~ .header-navigation-List li{
+        width: 100vw;
+        display: block;
+
+
+    }
+
+
+
 }
 .header-navigation-List li {
     color: #606062;
     flex-direction: row;
-    position: relative;
+    /*position: relative;*/
     overflow: hidden;
     height: 100%;
-    width: 100%;
-    padding: 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .5s ease;
+    min-width: 5rem;
+    /*transition: .5s ease;*/
 }
-.header-navigation-List li:hover{
+.header-navigation-List a:hover{
     background-color: #606062;
 
     color: #ffffff;
 }
 
-.header-navigation-List li::before {
+.header-navigation-List a::before {
     content: '';
     position: absolute;
     left: 0;
@@ -108,7 +140,7 @@
     transform: translateX(-100%);
     transition: transform .5s ease;
 }
-.header-navigation-List li:hover::before {
+.header-navigation-List a:hover::before {
     transform: translateX(0);
 }
 
@@ -117,18 +149,23 @@
     text-decoration: none;
     color: inherit;
     /*transition: .1s;*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*padding: 1.5rem;*/
+    position: relative;
+    overflow: hidden;
 }
 
 .facebook-icon {
     background-image: url(../graphics/fbicon.ico);
-    height: 50px;
-    width: 50px;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
-.facebook-icon-shrink {
-    background-image: url(../graphics/BeautyComplex1.jpg);
-}
+
 
 
 
