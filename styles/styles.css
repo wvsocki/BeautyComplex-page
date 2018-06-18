@@ -11,7 +11,7 @@
 
 
 .page-header {
-    height: 70px;
+    height: 4rem;
     position: fixed;
     width: 100vw;
     transition: all 0.6s;
@@ -19,7 +19,7 @@
 
 }
 .page-header-shrink {
-    height: 40px;
+    height: 2.5rem;
     background-color: rgba(256, 256, 256, 0.9);
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
@@ -81,27 +81,31 @@
         background: linear-gradient(to bottom, #606062 0%, #606062 20%, transparent 20%, transparent 40%, #606062 40%, #606062 60%, transparent 60%, transparent 80%, #606062 80%, #606062 100%);
         cursor: pointer;
         display: flex;
-        /*height: 100%;*/
-        /*padding-bottom: 100%;*/
-        /*width: 100%;*/
-        /*height: 100%;*/
-        /*width: 0;*/
-        /*padding-left: 50%;*/
-
+        margin: 5px;
+        height: 70%;
+        width: 40px;
+        /*position: relative;*/
 
     }
-    #menu-toggle:checked ~ .page-header{
-        /*background-color: rgba(256, 256, 256, 0.9);*/
-        background-color: black;
-    }
-
     #menu-toggle:checked ~ .header-navigation-List{
         /*visibility: visible;*/
         display: flex;
         width: 100vw;
-        height: 100vh;
+        height: 80vh;
+        font-size: 2rem;
         /*margin-top: 40px;*/
+        /*background-color: rgba(256, 256, 256, 0.9);*/
+
+    }
+    #menu-toggle:checked ~ .label-toggle::before{
+        content: '';
+        position: absolute;
+        top:0;
+        left: 0;
         background-color: rgba(256, 256, 256, 0.9);
+width: 100vw;
+        height: 100vh;
+        z-index: -1;
 
     }
     #menu-toggle:checked ~ .header-navigation-List li{
@@ -218,15 +222,22 @@ position: relative;
 .main-info-flex {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .main-info-col {
+
     width: 32%;
-    /*border: 1px solid #777777;*/
-    /*border-radius: 8px;*/
+    min-width: 383px;
     background: white;
     /*padding: 20px;*/
     /*overflow: hidden;*/
     font-family: sans-serif;
+
+}
+@media (max-width: 768px) {
+    .main-info-col {
+        width: 100%;
+    }
 
 }
 .main-info-col > h2 {
