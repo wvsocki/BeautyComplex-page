@@ -9,6 +9,13 @@
 
 root {
     font-size: 14px;
+
+}
+body{
+    /*font-family: 'Roboto', sans-serif;*/
+    /*font-family: sans-serif;*/
+    font-family: 'Lato', sans-serif;
+    color: #606062;
 }
 
 
@@ -17,7 +24,7 @@ root {
     position: fixed;
     width: 100vw;
     transition: all 0.6s;
-    z-index: 10;
+    z-index: 100000000;
 
 }
 .page-header-shrink {
@@ -139,6 +146,11 @@ width: 100vw;
     min-width: 5rem;
     /*transition: .5s ease;*/
 }
+.header-navigation-List li:nth-last-child(2) a{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-decoration: underline solid #efd100;
+}
 .header-navigation-List a:hover{
     background-color: #606062;
 
@@ -161,7 +173,6 @@ width: 100vw;
 }
 
 .header-navigation-List a {
-    font-family: sans-serif;
     text-decoration: none;
     color: inherit;
     /*transition: .1s;*/
@@ -173,6 +184,8 @@ width: 100vw;
     /*padding: 1.5rem;*/
     position: relative;
     overflow: hidden;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .facebook-icon {
@@ -192,7 +205,8 @@ width: 100vw;
     align-items: center;
     background-image: url(../graphics/BeautyComplex1.jpg);
     background-size: cover;
-    background-position-y: -150px;
+    background-position: center center;
+    /*background-position-y: -150px;*/
     height: 95vh;
     background-repeat: no-repeat;
     box-shadow:inset 0 0 0 2000px rgba(256, 256, 256, 0.6);
@@ -221,14 +235,112 @@ position: relative;
     width: 90%;
 
 }
+.site-description{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+.site-description h1 {
+    margin: 7vh;
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    padding-bottom: 3vh;
+    border-bottom: 2px solid #efd100;
+    text-align: center;
+    font-weight: 100;
+    /*border-image: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%);*/
+    /*radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);*/
+
+}
+.site-description h2 {
+    /*margin: 7vh;*/
+    display: flex;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 80%;
+    margin: auto;
+
+
+}
+
+.add-info{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url(../graphics/BeautyComplex41.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative;
+    box-shadow:inset 0 0 0 2000px rgba(1, 1, 1, 0.6);
+
+
+}
+.add-info:after {
+    top: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.add-info-flex{
+    display: flex;
+    justify-content: space-around;
+
+}
+.add-info-col {
+    width: 49%;
+    /*border: 1px solid #777777;*/
+    /*border-radius: 8px;*/
+    padding: 20px;
+
+}
+.add-info-img{
+
+    background-image: url(../graphics/BeautyComplex11.jpg);
+    height: 700px;
+    background-size: cover;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+}
+.add-info-txt{
+    color: white;
+    text-align: center;
+    margin: auto;
+    font-weight: 400;
+    font-size: 2rem;
+
+
+}
+.add-info-txt h2{
+    font-size: 4rem;
+    padding-bottom: 10vh;
+    font-weight: 100;
+    
+}
+
+
 
 
 .main-Info {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    position: relative;
     /*background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),*/
     /*radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);*/
     /*background-attachment:fixed*/
+}
+.main-Info:after {
+    top: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .main-info-flex {
@@ -243,19 +355,19 @@ position: relative;
     background: white;
     /*padding: 20px;*/
     /*overflow: hidden;*/
-    font-family: sans-serif;
+    text-align: center;
 
 }
 @media (max-width: 768px) {
     .main-info-col {
-        width: 100%;
+        width: 90%;
     }
 
 }
 .main-info-col > h2 {
-    font-size: 20px;
-    font-family: sans-serif;
+    font-size: 2rem;
     margin-bottom: 40px;
+    text-align: center;
 
 }
 .main-info-col-img {
@@ -296,31 +408,94 @@ position: relative;
 
 }
 
-.add-info{
-    padding-top: 100px;
-    padding-bottom: 100px;
 
+.gallery{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
-.add-info-flex{
+.gallery ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 
 }
-.add-info-col {
-    width: 49%;
-    /*border: 1px solid #777777;*/
-    /*border-radius: 8px;*/
-    background: white;
-    padding: 20px;
+
+
+.gallery li{
+    /*width: 370px;*/
+    /*height: 370px;*/
+    min-width: 383px;
+    width: 32%;
+    height: 300px;
+    margin-bottom: 1vh;
 
 }
-.add-info-img{
+@media (max-width: 768px) {
+    .gallery li {
+        width: 90%;
+        height: 90vw;
+    }
 
-    background-image: url(../graphics/BeautyComplex11.jpg);
-    height: 700px;
+}
+.gallery li img {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    width: 100%;
+    height: 100%;
+
+
+}
+.gallery li img:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transform: scale(1.05);
+}
+
+.fullScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background:rgba(1,1,1,0.7);
+}
+.fullScreen .close {
+    /*display: block;*/
+    position: absolute;
+    margin: auto;
+    width: 5vh;
+    height: 5vh;
+    transform: translate(90vw, 10vh);
+    border: none;
+    transition: all 0.3s ease;
+    overflow: visible;
+    background: linear-gradient(-45deg, transparent 0%, transparent 48%, #2E313C 49%, #2E313C 51%, transparent 51%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 48%, #2E313C 49%, #2E313C 51%, transparent 51%, transparent 100%);;
+}
+.gallery-btn {
+    position: absolute;
+    width: 5vh;
+    height: 5vh;
+    border: none;
+    /*overflow: hidden;*/
+    background-repeat: no-repeat;
     background-size: cover;
+    background: linear-gradient(-45deg, transparent 0%, transparent 48%, #2E313C 49%, #2E313C 51%, transparent 51%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 48%, #2E313C 49%, #2E313C 51%, transparent 51%, transparent 100%);;
+}
+.gallery-prev {
+
+    transform: translate(5vw, 50vh);
+    background-position: 2.5vh 0;
 
 }
-.add-info-txt{
-
+.gallery-next {
+    transform: translate(90vw, 50vh);
+    background-position: -2.5vh 0;
 }
+
+.fullScreen img {
+    display: block;
+    margin: 2vh auto ;
+    width: auto;
+    height: 96vh;
+}
+
