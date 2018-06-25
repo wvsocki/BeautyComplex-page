@@ -24,7 +24,7 @@ body{
     position: fixed;
     width: 100vw;
     transition: all 0.6s;
-    z-index: 100000000;
+    z-index: 9;
 
 }
 .page-header-shrink {
@@ -110,6 +110,7 @@ body{
     }
     #menu-toggle:checked ~ .label-toggle{
         /*transform: rotate(180deg);*/
+        /*z-index: 7;*/
         background: linear-gradient(-45deg, transparent 0%, transparent 48%, #2E313C 49%, #2E313C 51%, transparent 51%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 48%, #2E313C 49%, #2E313C 51%, transparent 51%, transparent 100%);
     }
 
@@ -288,6 +289,7 @@ position: relative;
 .add-info-flex{
     display: flex;
     justify-content: space-around;
+    align-items: center;
 
 }
 .add-info-col {
@@ -310,7 +312,7 @@ position: relative;
     color: white;
     text-align: center;
     margin: auto;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 2rem;
 
 
@@ -333,15 +335,15 @@ position: relative;
     /*radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);*/
     /*background-attachment:fixed*/
 }
-.main-Info:after {
-    top: 0;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 100000;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
+/*.main-Info:after {*/
+    /*top: 0;*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*z-index: -1;*/
+    /*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
+/*}*/
 
 .main-info-flex {
     display: flex;
@@ -357,10 +359,12 @@ position: relative;
     /*overflow: hidden;*/
     text-align: center;
 
+
 }
 @media (max-width: 768px) {
     .main-info-col {
         width: 90%;
+        padding-bottom: 10vh;
     }
 
 }
@@ -379,7 +383,7 @@ position: relative;
 
 
 }
-.main-info-col-img:hover{
+.main-info-col-img:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     transform: scale(1.05);
 }
@@ -456,7 +460,7 @@ position: relative;
     height: 100%;
     left: 0;
     top: 0;
-    z-index: 1000;
+    z-index: 10;
     background:rgba(1,1,1,0.7);
 }
 .fullScreen .close {
@@ -469,7 +473,7 @@ position: relative;
     border: none;
     transition: all 0.3s ease;
     overflow: visible;
-    background: linear-gradient(-45deg, transparent 0%, transparent 48%, #2E313C 49%, #2E313C 51%, transparent 51%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 48%, #2E313C 49%, #2E313C 51%, transparent 51%, transparent 100%);;
+    background: linear-gradient(-45deg, transparent 0%, transparent 48%, #ffffff 49%, #ffffff 51%, transparent 51%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 48%, #ffffff 49%, #ffffff 51%, transparent 51%, transparent 100%);;
 }
 .gallery-btn {
     position: absolute;
