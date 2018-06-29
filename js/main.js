@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // console.log(window);
 
     const header = document.querySelector('.page-header');
-    window.addEventListener('scroll', function(e) {
+    window.addEventListener('scroll', function (e) {
         if (this.pageYOffset >= 20) {
             header.classList.add('page-header-shrink');
         } else {
@@ -10,115 +10,70 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    var list = document.querySelectorAll(".gallery li");
-    console.log(list);
+    var galleryLi = document.querySelectorAll(".gallery li");
+    var list = Array.prototype.slice.call(galleryLi);
     var body = document.querySelector("body");
 
-    for (var i = 0; i < list.length; i++) {
-        function showFullscreen(i) {
-            function createFullscreen(i) {
-                var element = document.createElement("div");
 
-                element.classList.add("fullScreen");
+    function displayFullScreen(numberOfImage) {
+        var currImg = numberOfImage;
+        var fullScreenBox = document.createElement("div");
+        fullScreenBox.classList.add("fullScreen");
+        fullScreenBox.innerHTML =
+            '<button class="gallery-btn gallery-prev"></button>' +
+            '<button class="gallery-btn gallery-next"></button>' +
+            '<button class="close"></button>';
+        body.appendChild(fullScreenBox);
 
-                function addContent(listElement) {
-                    var src = (listElement.children[0].src);
-                    element.innerHTML =
-                        '<button class="gallery-btn gallery-prev"></button>' +
-                        '<button class="gallery-btn gallery-next"></button>' +
-                        '<button class="close"></button>' +
-                        '<img class="gallery-img" src="' + src + '">';
-                }
-
-                body.appendChild(element);
-                addContent(list[i]);
-                closeFullscreen(element)
-            }
-            function closeFullscreen(element) {
-                var close = document.querySelector(".close");
-                close.addEventListener("click", function () {
-                    body.removeChild(element);
-
-                });
-
-            }
-
-
-            list[i].addEventListener("click", function () {
-                createFullscreen(i);
-
-
-
-                var previous = document.querySelector(".gallery-prev");
-                var j = 0;
-                previous.addEventListener("click", function () {
-                    j--;
-                    // addContent(list[i - j]);
-                    createFullscreen(i--);
-                    console.log(j);
-                });
-
-
-                // var close = document.querySelector(".close");
-                // close.addEventListener("click", function () {
-                //     body.removeChild(element);
-                //
-                // });
-            });
+        function updateImage(fullScreenBox, currImg) {
+            var src = list[currImg].children[0].src;
+            var galleryImage = document.createElement("img");
+            galleryImage.classList.add("gallery-img");
+            galleryImage.src= src;
+            fullScreenBox.appendChild(galleryImage)
 
         }
-        showFullscreen(i);
+        updateImage(fullScreenBox, currImg);
 
+        closeFullScreen();
+        var prev = document.querySelector(".gallery-prev");
+        prev.addEventListener("click", function () {
+            if (currImg===0){
+                currImg = 5
+            } else {
+                currImg = currImg - 1;
+            }
+            fullScreenBox.removeChild(document.querySelector(".gallery-img"));
+            updateImage(fullScreenBox, currImg)
+
+        });
+        var next = document.querySelector(".gallery-next");
+        next.addEventListener("click", function () {
+            if (currImg===5){
+                currImg = 1
+            } else {
+                currImg = currImg + 1;
+            }
+            fullScreenBox.removeChild(document.querySelector(".gallery-img"));
+            updateImage(fullScreenBox, currImg)
+
+        })
     }
-    //
-    // for (var i = 0; i < list.length; i++) {
-    //         function showFullscreen(i) {
-    //             list[i].addEventListener("click", function () {
-    //
-    //                 var src = (this.children[0].src);
-    //                 var element = document.createElement("div");
-    //
-    //                 element.classList.add("fullScreen");
-    //
-    //                 element.innerHTML =
-    //                     '<button class="gallery-btn gallery-prev"></button>' +
-    //                     '<button class="gallery-btn gallery-next"></button>' +
-    //                     '<button class="close"></button>' +
-    //                     '<img class="gallery-img" src="' + src + '">';
-    //
-    //                 body.appendChild(element);
-    //
-    //                 var close = document.querySelector(".close");
-    //                 close.addEventListener("click", function () {
-    //                     body.removeChild(element);
-    //
-    //                 });
-    //
-    //             });
-    //
-    //         }
-    //         showFullscreen(i);
-    //
-    //     }
-    // var previous = document.querySelector(".gallery-prev");
-    // var fullScreen = document.querySelector(".fullScreen");
-    // var img = document.querySelector(".gallery-img");
-    // var j = 0;
-    // previous.addEventListener("click", function () {
-    //     j--;
-    //     console.log(j);
-    //     fullScreen.removeChild(img);
-    //     fullScreen.innerHTML = '<button class="gallery-btn gallery-prev"></button>' +
-    //         '<button class="gallery-btn gallery-next"></button>' +
-    //         '<button class="close"></button>' +
-    //         '<img class="gallery-img" src="' + list[i+j].children[0].src + '">';
-    //
-    //
-    // });
-
-
-
-
+    function closeFullScreen() {
+        var close = document.querySelector(".close");
+        close.addEventListener("click", function () {
+            body.removeChild(document.querySelector(".fullScreen"));
+            body.classList.remove("no-scroll")
+        })
+    }
+    for (var i = 0; i < list.length; i++) {
+        list[i].addEventListener("click", function () {
+            body.classList.add("no-scroll");
+            var currentImage = list.indexOf(this);
+            console.log(currentImage);
+            displayFullScreen(currentImage);
+        });
+    }
 });
 
 
