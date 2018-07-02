@@ -75,69 +75,6 @@ body{
 .label-toggle {display: none;
     }
 
-@media (max-width: 768px){
-    .header-navigation-List {
-        flex-direction: column;
-        /*visibility: hidden;*/
-        display: none;
-    }
-    #menu-toggle {
-        /*display: flex;*/
-        /*justify-content: flex-end;*/
-    }
-
-    .label-toggle {
-        /*background: linear-gradient(to bottom, #606062 0%, #606062 20%, transparent 20%, transparent 40%, #606062 40%, #606062 60%, transparent 60%, transparent 80%, #606062 80%, #606062 100%);*/
-        background: linear-gradient(to bottom, transparent 0%, transparent 19%, #2E313C 19%, #2E313C 23%, transparent 23%, transparent 48%, #2E313C 48%, #2E313C 52%, transparent 52%, transparent 76%, #2E313C 76%, #2E313C 80%, transparent 80%), linear-gradient(transparent, transparent);
-        cursor: pointer;
-        display: flex;
-        margin: 5px;
-        height: 70%;
-        width: 2.9rem;
-        /*position: relative;*/
-        transition: all .3s ease;
-
-    }
-    #menu-toggle:checked ~ .header-navigation-List{
-        /*visibility: visible;*/
-        display: flex;
-        width: 100vw;
-        height: 80vh;
-        font-size: 2rem;
-        /*margin-top: 40px;*/
-        /*background-color: rgba(256, 256, 256, 0.9);*/
-
-    }
-    #menu-toggle:checked ~ .label-toggle{
-        /*transform: rotate(180deg);*/
-        /*z-index: 7;*/
-        background: linear-gradient(-45deg, transparent 0%, transparent 48%, #2E313C 49%, #2E313C 51%, transparent 51%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 48%, #2E313C 49%, #2E313C 51%, transparent 51%, transparent 100%);
-    }
-
-    #menu-toggle:checked ~ .label-toggle::before{
-        content: '';
-        position: absolute;
-        display: inline-block;
-        top:0;
-        left: 0;
-        background-color: rgba(256, 256, 256, 0.9);
-width: 100vw;
-        height: 100vh;
-        z-index: -1;
-        /*transform: translateY(-90vw);*/
-        transform: rotate(-180deg);
-
-    }
-    #menu-toggle:checked ~ .header-navigation-List li{
-        width: 100vw;
-        display: block;
-
-
-    }
-
-
-
-}
 .header-navigation-List li {
     color: #606062;
     flex-direction: row;
@@ -147,10 +84,15 @@ width: 100vw;
     min-width: 5rem;
     /*transition: .5s ease;*/
 }
+.header-navigation-List li:nth-last-child(2){
+    padding: 5px;
+}
 .header-navigation-List li:nth-last-child(2) a{
     padding-left: 1rem;
     padding-right: 1rem;
     text-decoration: underline solid #efd100;
+    background-color: #efd100;
+    border-radius: 1rem;
 }
 .header-navigation-List a:hover{
     background-color: #606062;
@@ -195,7 +137,96 @@ width: 100vw;
     background-repeat: no-repeat;
     background-position: center;
 }
+@media (max-width: 768px){
+    .flex-breaker{
+        display: block;
+        width: 100%;
+        height: 0;
+    }
+    .header-navigation-List {
+        flex-direction: column;
+        /*visibility: hidden;*/
+        /*display: none;*/
+        visibility: hidden;
+        width: 0%;
+        transition: all 0.5s;
+        height: 80vh;
+        font-size: 2rem;
+        display: flex;
+        overflow: hidden;
+    }
+    .header-navigation-List li{
+        width: 100vw;
+        display: block;
 
+
+    }
+    #menu-toggle {
+        /*display: flex;*/
+        /*justify-content: flex-end;*/
+    }
+
+    .label-toggle {
+        /*background: linear-gradient(to bottom, #606062 0%, #606062 20%, transparent 20%, transparent 40%, #606062 40%, #606062 60%, transparent 60%, transparent 80%, #606062 80%, #606062 100%);*/
+        background: linear-gradient(to bottom, transparent 0%, transparent 19%, #2E313C 19%, #2E313C 23%, transparent 23%, transparent 48%, #2E313C 48%, #2E313C 52%, transparent 52%, transparent 76%, #2E313C 76%, #2E313C 80%, transparent 80%), linear-gradient(transparent, transparent);
+        cursor: pointer;
+        display: flex;
+        margin: 5px;
+        height: 70%;
+        width: 2.9rem;
+        /*position: relative;*/
+        transition: background .3s ease;
+
+        /*page-break-after: always;*/
+
+    }
+    .label-toggle::before{
+        content: '';
+        position: absolute;
+        display: inline-block;
+        /*display: none;*/
+        visibility: hidden;
+        top:0;
+        left: 100vw;
+        background-color: rgba(256, 256, 256, 0.9);
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        transition: all 0.5s;
+    }
+    #menu-toggle:checked ~ .header-navigation-List{
+        visibility: visible;
+
+        /*display: flex;*/
+        width: 100%;
+        /*height: 80vh;*/
+        /*font-size: 2rem;*/
+        /*margin-top: 40px;*/
+        /*background-color: rgba(256, 256, 256, 0.9);*/
+
+    }
+    #menu-toggle:checked ~ .label-toggle{
+        /*z-index: 7;*/
+        background: linear-gradient(-45deg, transparent 0%, transparent 48%, #2E313C 49%, #2E313C 51%, transparent 51%, transparent 100%), linear-gradient(45deg, transparent 0%, transparent 48%, #2E313C 49%, #2E313C 51%, transparent 51%, transparent 100%);
+    }
+
+    #menu-toggle:checked ~ .label-toggle::before{
+        /*display: inline-block;*/
+        visibility: visible;
+left: 0;
+
+
+    }
+    /*#menu-toggle:checked ~ .header-navigation-List li{*/
+        /*width: 100vw;*/
+        /*display: block;*/
+
+
+    /*}*/
+
+
+
+}
 
 
 
@@ -321,6 +352,19 @@ position: relative;
     padding-bottom: 10vh;
     font-weight: 100;
     
+}
+@media (max-width: 768px){
+    .add-info-flex{
+        flex-direction: column;
+
+    }
+    .add-info-col {
+        width: 90%;
+        /*border: 1px solid #777777;*/
+        /*border-radius: 8px;*/
+        /*padding: 20px;*/
+
+    }
 }
 
 
@@ -460,13 +504,13 @@ position: relative;
     left: 0;
     top: 0;
     z-index: 10;
-    background:rgba(1,1,1,0.7);
+    background:rgba(0,0,0,0.7);
     overflow: hidden;
 }
-.no-scroll {
-    position: fixed;
-    overflow: hidden;
-}
+
+
+
+
 .fullScreen .close {
     position: absolute;
     margin: auto;

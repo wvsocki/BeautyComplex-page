@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // console.log(window);
 
     const header = document.querySelector('.page-header');
-    window.addEventListener('scroll', function (e) {
+    window.addEventListener('scroll', function () {
         if (this.pageYOffset >= 20) {
             header.classList.add('page-header-shrink');
         } else {
@@ -63,14 +63,14 @@ document.addEventListener("DOMContentLoaded", function () {
         var close = document.querySelector(".close");
         close.addEventListener("click", function () {
             body.removeChild(document.querySelector(".fullScreen"));
-            body.classList.remove("no-scroll")
+            // body.classList.remove("no-scroll")
         })
     }
     for (var i = 0; i < list.length; i++) {
         list[i].addEventListener("click", function () {
-            body.classList.add("no-scroll");
+            // body.classList.add("no-scroll");
             var currentImage = list.indexOf(this);
-            console.log(currentImage);
+            // console.log(currentImage);
             displayFullScreen(currentImage);
         });
     }
