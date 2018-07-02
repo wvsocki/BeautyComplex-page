@@ -609,11 +609,49 @@ text-align: center;
 .contact{
     width: 100%;
     height: 60vh;
-
+    z-index: 0;
+    position: relative;
 }
 .map{
+    width: 100%;
+    height: 100%;
+}
+
+.contact-flex{
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 
 }
-.contact-flex{
+.contact-content{
+    width: 30rem;
+    height: 50vh;
+    background-color: #fff999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
+}
+.contact-content-logo{
+    width: 366px;
+    height: 107px;
+    margin-bottom: 5%;
+
+
+}
+.contact-content-info{
+    color: #606062;
+    text-align: center;
+    font-weight: 400;
+
+}
+.contact-content-info b{
+    font-weight: 700;
 }
