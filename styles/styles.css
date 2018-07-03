@@ -17,6 +17,16 @@ body{
     font-family: 'Lato', sans-serif;
     color: #606062;
 }
+.shadow:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
 
 
 .page-header {
@@ -245,14 +255,14 @@ left: 0;
     /*box-shadow: 0px 10px 2px rgba(256, 256, 256, 0.6);*/
 position: relative;
 }
-.main-Banner:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
+/*.main-Banner:after {*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*z-index: 0;*/
+    /*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
+/*}*/
 
 
 .main-Banner-Logo {
@@ -306,15 +316,15 @@ position: relative;
 
 
 }
-.add-info:after {
-    top: 0;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
+/*.add-info:after {*/
+    /*top: 0;*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*z-index: 0;*/
+    /*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
+/*}*/
 
 .add-info-flex{
     display: flex;
@@ -494,7 +504,9 @@ position: relative;
 }
 .gallery li img:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+cursor: zoom-in;
     transform: scale(1.05);
+
 }
 
 .fullScreen {
@@ -553,7 +565,7 @@ position: relative;
 
 .reservation{
     padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-bottom: 20vh;
     background-image: url(../graphics/BeautyComplex30.jpg);
     background-size: cover;
     background-position: center center;
@@ -561,15 +573,15 @@ position: relative;
     background-attachment: fixed;
     position: relative;
 }
-.reservation:after {
-    top: 0;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
+/*.reservation:after {*/
+    /*top: 0;*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*z-index: 0;*/
+    /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);*/
+/*}*/
 .reservation-flex{
     display: flex;
     flex-direction: column;
@@ -612,9 +624,14 @@ text-align: center;
     z-index: 0;
     position: relative;
 }
+
 .map{
     width: 100%;
     height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .contact-flex{
@@ -622,17 +639,16 @@ text-align: center;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 100%;
     height: 100%;
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     left: 0;
 
 }
 .contact-content{
-    width: 30rem;
+    width: 25rem;
     height: 50vh;
-    background-color: #fff999;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -642,16 +658,74 @@ text-align: center;
 .contact-content-logo{
     width: 366px;
     height: 107px;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 
 
 }
 .contact-content-info{
     color: #606062;
     text-align: center;
-    font-weight: 400;
+    font-weight: 300;
+    font-size: 1.2rem;
 
+}
+.contact-content-info p {
+    border-bottom: 2px solid #efd100;
+    margin: 2rem;
+    padding: 1.5rem;
 }
 .contact-content-info b{
     font-weight: 700;
+}
+.brands{
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    background-color: #fff;
+
+}
+.brands-list{display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+.brands-list-header{
+    color: #606062;
+    font-weight: 700;
+    width: 60%;
+    margin: 2rem 20% 2rem 20%;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 2px solid #efd100;
+
+}
+.brands-list-logo{
+    width: 100px;
+    height: 50px;
+    background-color: lightpink;
+    margin: 2rem;
+
+
+}
+.brands-list-logo-a{
+
+}
+
+.footer{
+    border-top: 1px solid #606062;
+    padding: 5vh 0 5vh 0;
+}
+.footer-brand{
+    width: 100%;
+    text-align: center;
+    font-weight: 300;
+    padding: 1rem;
+
+
+}
+.footer-credits{
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+
 }
