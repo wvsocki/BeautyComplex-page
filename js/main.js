@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const header = document.querySelector('.page-header');
+    var header = document.querySelector('.page-header');
+    var registeronline = document.querySelector('.register-online');
     window.addEventListener('scroll', function () {
-        if (this.pageYOffset >= 20) {
+        if (this.pageYOffset >= 1) {
             header.classList.add('page-header-shrink');
+            registeronline.classList.add('register-online-shrink');
         } else {
             header.classList.remove('page-header-shrink');
+            registeronline.classList.remove('register-online-shrink');
         }
     });
 
@@ -74,15 +77,39 @@ document.addEventListener("DOMContentLoaded", function () {
             displayFullScreen(currentImage);
         });
     }
-    // function initMap() {
-    //     var mapOptions = {
-    //         center: new google.maps.LatLng(51.5, -0.12),
-    //         zoom: 10,
-    //         mapTypeId: google.maps.MapTypeId.HYBRID
-    //     };
-    //     var map = new google.maps.Map(document.querySelector(".map"), mapOptions);
-    // }
+    document.querySelector('.header-navigation-list a')[0].onclick = function () {
+        scrollTo(2500, 1250);
+    };
 
+    scrollTo = function(to, duration) {
+        var
+            element = document.scrollingElement || document.documentElement,
+            start = element.scrollTop,
+            change = to - start,
+            startDate = +new Date(),
+            // t = current time
+            // b = start value
+            // c = change in value
+            // d = duration
+            easeInOutQuad = function(t, b, c, d) {
+                t /= d/2;
+                if (t < 1) return c/2*t*t + b;
+                t--;
+                return -c/2 * (t*(t-2) - 1) + b;
+            },
+            animateScroll = function() {
+                var currentDate = +new Date();
+                var currentTime = currentDate - startDate;
+                element.scrollTop = parseInt(easeInOutQuad(currentTime, start, change, duration));
+                if(currentTime < duration) {
+                    requestAnimationFrame(animateScroll);
+                }
+                else {
+                    element.scrollTop = to;
+                }
+            };
+        animateScroll();
+    };
 
 });
 
