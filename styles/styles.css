@@ -695,6 +695,7 @@ ul {
     font-weight: 700;
 }
 .form{
+    background-color:#606062;
     width: 100%;
     height: 60vh;
     z-index: 0;
